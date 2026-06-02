@@ -13,13 +13,6 @@ style default:
     properties gui.text_properties()
     language gui.language
     
-transform hover_nav:
-# used for hover on navigation items
-    #on hover:
-    #    stuff
-    on idle:
-        matrixcolor IdentityMatrix()
-
 style input:
     properties gui.text_properties("input", accent=True)
     adjust_spacing False
