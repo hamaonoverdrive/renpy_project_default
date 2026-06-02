@@ -30,5 +30,19 @@ init python:
         renpy.music.play(audio.ui_adv, channel='adv', loop=False)
         return True
 
+    def get_non_linear_volume(mixer):
+        import math
+
+        value = Preference(mixer).get_volume()
+        if value > 0:
+            if config.quadratic_volumes:
+                value = math.sqrt(value)
+            else:
+                value = math.log10(value) * 20 + config.volume_db_range
+        else:
+            value = 0
+
+        return value * 100/40
+
 define config.say_allow_dismiss = play_advance_sound
 

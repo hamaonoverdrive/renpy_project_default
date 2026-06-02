@@ -753,7 +753,7 @@ screen preferences():
                     vbox:
                         style_prefix "radio"
                         label _("Display")
-                        textbutton _("Window") action Preference("display", "window")
+                        textbutton _("Window") action Preference("display", "any window")
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
 
                 vbox:
@@ -774,7 +774,10 @@ screen preferences():
 
                 vbox:
 
-                    label _("Text Speed")
+                    if preferences.text_cps != 0:
+                        label _("Text Speed") + "\n [int(preferences.text_cps)] " + _("characters/second")
+                    else:
+                        label _("Text Speed") + "\n" + _("Instant")
 
                     bar value Preference("text speed")
 
@@ -785,14 +788,14 @@ screen preferences():
                 vbox:
 
                     if config.has_music:
-                        label _("Music Volume")
+                        label _("Music Volume") + " [int(get_non_linear_volume('music volume'))]%"
 
                         hbox:
                             bar value Preference("music volume")
 
                     if config.has_sound:
 
-                        label _("Sound Volume")
+                        label _("Sound Volume") + " [int(get_non_linear_volume('sound volume'))]%"
 
                         hbox:
                             bar value Preference("sound volume")
@@ -802,7 +805,7 @@ screen preferences():
 
 
                     if config.has_voice:
-                        label _("Voice Volume")
+                        label _("Voice Volume") + " [int(get_non_linear_volume('voice volume'))]%"
 
                         hbox:
                             bar value Preference("voice volume")
