@@ -311,9 +311,9 @@ screen navigation():
 
             textbutton _("History") action [ShowMenu("history"), Function(fix_click)] at hover_nav
 
-            textbutton _("Save") action [ShowMenu("save"), Function(fix_click)]
+            textbutton _("Save") action [ShowMenu("save"), Function(fix_click)] at hover_nav
 
-        textbutton _("Load") action [ShowMenu("load"), Function(fix_click)]
+        textbutton _("Load") action [ShowMenu("load"), Function(fix_click)] at hover_nav
 
         textbutton _("Preferences") action [ShowMenu("preferences"), Function(fix_click)] at hover_nav
 

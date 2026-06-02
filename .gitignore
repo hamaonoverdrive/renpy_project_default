@@ -1,26 +1,49 @@
-# Directories that Ren'Py changes files in.
-/game/saves
-/game/cache
+# Created by https://www.toptal.com/developers/gitignore/api/renpy
+# Edit at https://www.toptal.com/developers/gitignore?templates=renpy
 
-# Compiled script files. These are important for saving, and so should
-# be preserved by developer and build systems after the game has been released.
-/game/**/*.rpyc
-/game/**/*.rpymc
+### Renpy ###
+# Don't track content of these folders #
+########################################
+cache/
+saves/
 
-# Files Ren'Py can generate.
-/game/**/*.bak
-/game/**/*.new
-/game/**/*.old
 
-# Error, log, and output files.
-/errors.txt
-/files.txt
-/image_cache.txt
-/log.txt
-/save_dump.txt
-/traceback.txt
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
 
-# Launcher-generated files.
-/dialogue.tab
-/dialogue.txt
-/strings.json
+*.rpyc
+*.rpymc
+
+
+# The log file and other misc things #
+######################################
+log.txt
+errors.txt
+traceback.txt
+files.txt
+image_cache.txt
+save_dump.txt
+traceback.txt
+
+# Launcher generated files #
+############################
+dialogue.tab
+dialogue.txt
+strings.json
+
+# files that I use often
+*.aup3
+*.bak
+*.*~
+*/__pycache__
+*.ipynb_checkpoints
+*/*/app.json
+*/*/workspace.json
+*/*/workspace-mobile.json
+*/.trash
