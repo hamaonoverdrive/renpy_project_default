@@ -1,8 +1,3 @@
-define audio.ui_hover = "audio/Space_6_2.wav"
-define audio.ui_click = "audio/Space_5_3.wav"
-define audio.ui_adv = "audio/Space_10_1.wav"
-# might swap out... possible candidates, space 1, 2, 3, 6, 10, 11
-
 default no_hover = False
 define click_time = 0.1
 screen hover_cooldown(time):
