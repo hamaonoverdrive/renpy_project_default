@@ -1319,29 +1319,35 @@ screen nvl(dialogue, items=None):
     window:
         style "nvl_window"
 
-        has vbox:
-            spacing gui.nvl_spacing
+        viewport:
+            yinitial 1.0
+            ysize 1080 - (gui.nvl_borders.padding[1] + gui.nvl_borders.padding[3])
+            scrollbars nvl_scrollbars
+            mousewheel nvl_scrollbars_mousewheel
 
-        ## Displays dialogue in either a vpgrid or the vbox.
-        if gui.nvl_height:
+            vbox:
+                spacing gui.nvl_spacing
 
-            vpgrid:
-                cols 1
-                yinitial 1.0
+                ## Displays dialogue in either a vpgrid or the vbox.
+                if gui.nvl_height:
 
-                use nvl_dialogue(dialogue)
+                    vpgrid:
+                        cols 1
+                        yinitial 1.0
 
-        else:
+                        use nvl_dialogue(dialogue)
 
-            use nvl_dialogue(dialogue)
+                else:
 
-        ## Displays the menu, if given. The menu may be displayed incorrectly if
-        ## config.narrator_menu is set to True.
-        for i in items:
+                    use nvl_dialogue(dialogue)
 
-            textbutton i.caption:
-                action i.action
-                style "nvl_button"
+                ## Displays the menu, if given. The menu may be displayed incorrectly if
+                ## config.narrator_menu is set to True.
+                for i in items:
+
+                    textbutton i.caption:
+                        action i.action
+                        style "nvl_button"
 
     add SideImage() xalign 0.0 yalign 1.0
 

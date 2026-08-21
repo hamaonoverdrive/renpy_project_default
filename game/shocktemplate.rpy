@@ -6,7 +6,6 @@ screen hover_cooldown(time):
 
 init python:
     # registring channels
-    renpy.music.register_channel(name='beeps', mixer='voice')
     renpy.music.register_channel(name='adv', mixer='voice')
 
     def fix_focus(f):
@@ -45,4 +44,3 @@ init python:
         return value * 100/40
 
 define config.say_allow_dismiss = play_advance_sound
-

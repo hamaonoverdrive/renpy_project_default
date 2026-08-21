@@ -16,3 +16,6 @@ transform hover_nav:
         # restore default
         matrixcolor IdentityMatrix()
 
+# ==== SAY SCREEN ====
+define nvl_scrollbars = "vertical" # None to remove scrollbar
+define nvl_scrollbars_mousewheel = True
