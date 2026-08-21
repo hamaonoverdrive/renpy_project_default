@@ -7,12 +7,17 @@ For the most part, the configuration variables you'll want to change are in `def
 ## Key Changes
 - Sensible `.gitignore` file
 - Preference screen QoL tweaks
-- Added default style to all buttons that gives them `activate_sound` and `hover_sound` parameters
+- Added default style to all buttons that gives them `activate_sound` and `hover_sound` parameters, and  adv_sound
 - Added transform `hover_nav` to all buttons in `navigation()`
+- Modified default nvl behavior to length, height = None
+    - Also corrected the history and small screen variant
+- nvl mode scrolls on overflow, optional scrollbar to go back up
 - Most importantly: prevented accidental activation of `hover_sound` when clicking navigation_menu items and changing screens.
+
+### Added to `/game/plugins`
+- [kigyodev's improved word counter](https://kigyo.itch.io/renpy-word-counter)
+- my homebrewed text bloop plugin
 
 ## Future Changes
 Subject to my changing whims.
-- Better nvl mode defaults
 - Refactor some configuration variables
-- Fix selection attribute on "fullscreen mode" button
