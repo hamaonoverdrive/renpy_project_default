@@ -6,19 +6,32 @@ init python:
     
     === TO USE THIS PLUGIN ===
     1. either copy the below callback method or use it as a template for your own
-    2. add the callback=(function name) argument to the character you want to add bloops to (example below)
+    2. add the callback=(function name), cb_name=(char name) arguments relevant character(s)
 
     ========
     """
 
     renpy.music.register_channel(name='beeps', mixer='voice')
 
-    def callback_ex(event, what, interact=True, **kwargs):
+    def callback_ex(event, what, interact=True, cb_name=None, **kwargs):
+        if not interact:
+            return
+
         if event == "show" or event == "show_done":
-            file = "pc_bloop.ogg"
-            bloop_len = 0.134
-            queue_bloops(what, file, bloop_len)
-        elif event == "slow_done" or event == 'done':
+            renpy.sound.stop(channel="beeps")
+            file = ""
+            bloop_len = 0
+
+            # CHANGE VALUES HERE
+            if cb_name == "eileen":
+                file = "eileen_bloop.ogg"
+                bloop_len = 0.134
+            # add elifs here for more chars
+
+            if bloop_len != 0:
+                renpy.sound.stop(channel="adv")
+                time = queue_bloops(what, file, bloop_len)
+        elif event == "slow_done" or event == 'done' or renpy.is_skipping():
             renpy.sound.stop(channel="beeps")
 
     def queue_bloops(text, bloopfile, bloop_len):

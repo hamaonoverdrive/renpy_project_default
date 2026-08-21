@@ -7,7 +7,8 @@ For the most part, the configuration variables you'll want to change are in `def
 ## Key Changes
 - Sensible `.gitignore` file
 - Preference screen QoL tweaks
-- Added default style to all buttons that gives them `activate_sound` and `hover_sound` parameters, and  adv_sound
+- Added default style to all buttons that gives them `activate_sound` and `hover_sound` parameters
+- Added `ui_adv` for text advance
 - Added transform `hover_nav` to all buttons in `navigation()`
 - Modified default nvl behavior to length, height = None
     - Also corrected the history and small screen variant
